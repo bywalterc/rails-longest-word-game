@@ -9,11 +9,16 @@
     <% end %>
   </div>
 
-  <div class="entry-form">
-    <form action="/score" method="post" class="form-inline">
+<!--   <% @list = @letters.join(', ') %> -->
+
+  <!-- <p><%= @list %></p> -->
+
+  <div class="input-group">
+    <form action="/score" method="post">
     <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-      <input class="form-group" type="text" name="word" placeholder="What is the longest word you can find ?">
-      <input class="btn btn-primary" type="submit" value="Play">
+    <%= hidden_field_tag :selection, @letters %>
+      <input class="text-field" type="text" name="word" placeholder="What is the longest word you can find ?">
+      <input class="btn btn-outline-secondary" type="submit" value="Play">
     </form>
   </div>
 
